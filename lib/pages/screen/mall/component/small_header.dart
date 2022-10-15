@@ -4,17 +4,16 @@ import 'package:flutter/material.dart';
 import '../../../../widget/icon_funtion.dart';
 import '../../../../widget/iconsearch.dart';
 import '../../../page/cart/cart.dart';
-import '../../../page/chat/chat.dart';
 
-class HeaderHome extends StatefulWidget {
-  const HeaderHome(this.scrollController);
+class HeaderSmall extends StatefulWidget {
+  const HeaderSmall(this.scrollController);
   final TrackingScrollController scrollController;
 
   @override
-  State<HeaderHome> createState() => _HeaderHomeState();
+  State<HeaderSmall> createState() => _HeaderSmallState();
 }
 
-class _HeaderHomeState extends State<HeaderHome> {
+class _HeaderSmallState extends State<HeaderSmall> {
 
   late Color _backgroundColor;
   late Color _backgroundColorSearch;
@@ -31,7 +30,7 @@ class _HeaderHomeState extends State<HeaderHome> {
     _colorIcon = Colors.white;
     _opacity = 0.0;
     _offset = 0.0;
-    
+
     widget.scrollController.addListener(_onscroll);
     super.initState();
   }
@@ -39,7 +38,7 @@ class _HeaderHomeState extends State<HeaderHome> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: _backgroundColor,
+      color: Colors.black,
       child: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all( 10),
@@ -50,10 +49,7 @@ class _HeaderHomeState extends State<HeaderHome> {
                 Navigator.pushReplacement(context,
                     MaterialPageRoute(builder: (context) => Cart()));
               }, notification: 20,),
-              IconFuntion(color: _colorIcon,icon: Icons.chat, onPress: () {
-                Navigator.pushReplacement(context,
-                    MaterialPageRoute(builder: (context) => Chat()));
-              }, notification: 15,),
+              IconFuntion(color: _colorIcon,icon: Icons.chat, onPress: () {  }, notification: 15,),
             ],
           ),
         ),

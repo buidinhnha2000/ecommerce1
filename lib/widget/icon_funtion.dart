@@ -36,7 +36,7 @@ class _IconFuntionState extends State<IconFuntion> {
       Stack(
         children: [
           IconButton(
-            onPressed: () => widget.onPress,
+            onPressed: widget.onPress,
             icon: Icon(icon),
             color: widget.color,
             iconSize: 28,

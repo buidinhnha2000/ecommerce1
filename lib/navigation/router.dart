@@ -1,6 +1,6 @@
 import 'package:ecommerce/navigation/routes.dart';
 import 'package:ecommerce/pages/screen/live/live.dart';
-import 'package:ecommerce/pages/screen/notification/nofication.dart';
+import 'package:ecommerce/pages/screen/notification/notification.dart';
 import 'package:ecommerce/pages/screen/profile/profile.dart';
 import 'package:ecommerce/pages/screen/mall/mall.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +21,7 @@ class AppRouter {
             builder: (_) => const LivePage(), settings: settings);
       case nofication:
         return MaterialPageRoute(
-            builder: (_) => const NoficationPage(), settings: settings);
+            builder: (_) => const NotificationPage(), settings: settings);
       case profile:
         return MaterialPageRoute(
             builder: (_) => ProfilePage(), settings: settings);

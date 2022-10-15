@@ -56,10 +56,7 @@ class _BottomCartState extends State<BottomCart> {
               child: Container(
                   height: 60,
                   color: Colors.black45,
-                  padding: EdgeInsets.only(top: 17),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text("Tong thanh toan", style: TextStyle(fontSize: 17),),
                       SizedBox(width: 3,),

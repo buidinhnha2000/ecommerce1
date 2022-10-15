@@ -1,27 +1,11 @@
-import 'package:ecommerce/pages/page/search/component/search_header.dart';
 import 'package:flutter/material.dart';
 
-import '../pages/page/search/search.dart';
+class ChatSearch extends StatelessWidget {
+  const ChatSearch({Key? key}) : super(key: key);
 
-class IconSearch extends StatefulWidget {
-  const IconSearch({required this.color});
-
-  final Color color;
-
-  @override
-  State<IconSearch> createState() => _IconSearchState();
-}
-
-class _IconSearchState extends State<IconSearch> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: _buildInputSearch(
-
-      ),
-    );
-  }
-  _buildInputSearch() {
+    final size = MediaQuery.of(context).size;
     final sizeIcon = BoxConstraints(minWidth: 40, minHeight: 40);
     final border = OutlineInputBorder(
         borderSide: const BorderSide(
@@ -31,21 +15,20 @@ class _IconSearchState extends State<IconSearch> {
         borderRadius: const BorderRadius.all(
           Radius.circular(4.0),
         ));
-    return Expanded(
+
+    return Container(
+      color: Colors.black,
+      padding: const EdgeInsets.only(left: 10, right: 10, bottom: 10),
       child: TextField(
-        onTap: (){
-          Navigator.pushReplacement(context,
-              MaterialPageRoute(builder: (context) => Search()));
-        },
         decoration: InputDecoration(
           contentPadding: EdgeInsets.all(4),
           enabledBorder: border,
           focusedBorder: border,
           isDense: true,
-          hintText: "Searching",
+          hintText: "Searching chat ...",
           hintStyle: const TextStyle(
             fontSize: 16,
-            color: Colors.red,
+            color: Colors.white54,
           ),
           prefixIcon: const Icon(
             Icons.search,
@@ -54,10 +37,10 @@ class _IconSearchState extends State<IconSearch> {
           ),
           prefixIconConstraints: sizeIcon,
           suffixIcon:
-          const Icon(Icons.camera_alt, color: Colors.white70, size: 25),
+          const Icon(Icons.mic, color: Colors.white70, size: 25),
           suffixIconConstraints: sizeIcon,
           filled: true,
-          fillColor: widget.color,
+          fillColor: Colors.black,
         ),
       ),
     );

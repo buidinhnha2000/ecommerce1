@@ -64,8 +64,7 @@ class _SaleHomeState extends State<SaleHome> {
                   itemBuilder: (BuildContext context, int index) {
                     return GestureDetector(
                       onTap: () {
-                        Navigator.pushReplacement(context,
-                            MaterialPageRoute(builder: (context) => Cart()));
+
                       },
                       child: Container(
                         padding: const EdgeInsets.only(

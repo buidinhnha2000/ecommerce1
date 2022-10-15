@@ -6,14 +6,11 @@ enum Menu { itemOne, itemTwo, itemThree, itemFour }
 class PopupMenu extends StatelessWidget {
   const PopupMenu({Key? key}) : super(key: key);
 
+
   @override
   Widget build(BuildContext context) {
     return PopupMenuButton<Menu>(
         onSelected: (choice) async {
-          // switch (choice) {
-          //   case Menu.itemOne:
-          //     // return await instance.signOut();
-          // }
         },
         color: Colors.black87,
         itemBuilder: (BuildContext context) =>
@@ -21,25 +18,34 @@ class PopupMenu extends StatelessWidget {
           const PopupMenuItem<Menu>(
               value: Menu.itemOne,
               child: ListTile(
-                leading: Icon(Icons.home, color: Colors.lime),
+                leading: Icon(Icons.add_alert, color: Colors.lime),
                 title: Text(
-                  'Home', style: TextStyle(color: Colors.limeAccent),),
+                  'Notification', style: TextStyle(color: Colors.limeAccent),),
               )
           ),
           const PopupMenuItem<Menu>(
               value: Menu.itemTwo,
               child: ListTile(
+                leading: Icon(Icons.person, color: Colors.lime),
+                title: Text(
+                    'Profile', style: TextStyle(color: Colors.limeAccent)),
+              )
+          ),
+          const PopupMenuItem<Menu>(
+              value: Menu.itemThree,
+              child: ListTile(
                 leading: Icon(Icons.settings, color: Colors.lime),
                 title: Text(
-                    'Setting', style: TextStyle(color: Colors.limeAccent)),
+                    'Settings', style: TextStyle(color: Colors.limeAccent)
+                ),
               )
           ),
           const PopupMenuItem<Menu>(
               value: Menu.itemFour,
               child: ListTile(
                 leading: Icon(
-                    Icons.person_rounded, color: Colors.blue),
-                title: Text('Profile', style: TextStyle(color: Colors.blue)),
+                    Icons.subdirectory_arrow_right, color: Colors.blue),
+                title: Text('Sign Out', style: TextStyle(color: Colors.blue)),
               )
           ),
         ]
